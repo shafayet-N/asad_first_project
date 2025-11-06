@@ -10,7 +10,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # ✅ Homepage → Home.html
-    path('', lambda r: render(r, 'Home.html'), name="home"),
+    path('', lambda r: render(r, 'home.html'), name="home"),
 
     # ✅ Your pages
     path('login/', lambda r: render(r, 'Login.html'), name="login"),
