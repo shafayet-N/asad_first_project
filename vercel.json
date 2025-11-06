@@ -1,5 +1,19 @@
 {
+  "buildCommand": "pip install -r requirements.txt && cd backend && python manage.py collectstatic --noinput",
+  "outputDirectory": "backend/staticfiles",
+  "framework": "django",
+  "env": {
+    "PYTHONUNBUFFERED": "1"
+  },
+  "functions": {
+    "api/wsgi.py": {
+      "runtime": "python3.11"
+    }
+  },
   "rewrites": [
-    { "source": "/(.*)", "destination": "/" }
+    {
+      "source": "/(.*)",
+      "destination": "/api/wsgi.py"
+    }
   ]
 }
